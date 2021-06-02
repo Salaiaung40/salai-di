@@ -17,9 +17,10 @@ public class SalaiDiApplication {
 		//simple Calling MyController class from here (Basic controller method)
 		MyController myController = (MyController) ctx.getBean("myController");
 
+		System.out.println("----Basic method-----");
 		String greeting = myController.sayHello();
 
-		System.out.println(greeting);
+		System.out.println(greeting + "\n");
 
 		/*
 		This part is injecting springFramework controller DI
@@ -28,7 +29,10 @@ public class SalaiDiApplication {
 
 		System.out.println(" ########## Property ##############" );
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
-		System.out.println(propertyInjectedController.getGreetingFR());
+		System.out.println("-----1 interface with 1 implement-----");
+		System.out.println(propertyInjectedController.getGreetingFR() + "\n");
+		System.out.println("-----1 interface with individual/specific implement-----");
+		System.out.println(propertyInjectedController.getGreetingPro() + "\n" +"\n");
 			/* This will get error coz spring does not know that the manage component.
 		Thus you need to assign the annotated "@Controller" at PropertyInjectedController Class.
 		And that add "@Autowired" to initialisation (public GreetingService greetingService).
@@ -36,11 +40,17 @@ public class SalaiDiApplication {
 
 		System.out.println(" ########## Setter ##############" );
 		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
-		System.out.println(setterInjectedController.getGreetingENG());
+		System.out.println("-----1 interface with 1 implement-----");
+		System.out.println(setterInjectedController.getGreetingENG()+ "\n");
+		System.out.println("-----1 interface with individual/specific implement-----");
+		System.out.println(setterInjectedController.getGreetingSetter()+ "\n"+ "\n");
 
 		System.out.println(" ########## Constructor ##############" );
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
-		System.out.println(constructorInjectedController.getGreetingNL());
+		System.out.println("-----1 interface with 1 implement-----");
+		System.out.println(constructorInjectedController.getGreetingNL()+ "\n");
+		System.out.println("-----1 interface with individual/specific implement-----");
+		System.out.println(constructorInjectedController.getGreeting()+ "\n"+ "\n");
 	}
 
 }
