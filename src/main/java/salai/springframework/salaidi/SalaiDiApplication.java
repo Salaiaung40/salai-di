@@ -3,10 +3,7 @@ package salai.springframework.salaidi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import salai.springframework.salaidi.controllers.ConstructorInjectedController;
-import salai.springframework.salaidi.controllers.MyController;
-import salai.springframework.salaidi.controllers.PropertyInjectedController;
-import salai.springframework.salaidi.controllers.SetterInjectedController;
+import salai.springframework.salaidi.controllers.*;
 
 @SpringBootApplication
 public class SalaiDiApplication {
@@ -54,6 +51,13 @@ public class SalaiDiApplication {
 		System.out.println(constructorInjectedController.getGreetingNL()+ "\n");
 		System.out.println("-----> 1 interface with individual/specific implement <-----");
 		System.out.println(constructorInjectedController.getGreeting()+ "\n"+ "\n");
+
+		System.out.println("########## I18n controller ##############");
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println("-----> This is the result of working with @Profile annotation  <-----");
+		//need to specify the active profile name at application.properties file
+		System.out.println(i18nController.sayHello() + "\n");
+
 	}
 
 }
