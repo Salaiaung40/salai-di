@@ -4,7 +4,7 @@ package salai.springframework.salaidi.services;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Profile("ES")
+@Profile({"ES" , "default"}) // adding default will act as default when there is not profile set.
 @Service("i18nService")// it is combine writing of Service + Qualifier
 public class I18nSpanishGreetingServiceImpl implements GreetingServiceForSpecific{
     @Override
