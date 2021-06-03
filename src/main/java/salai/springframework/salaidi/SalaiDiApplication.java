@@ -22,6 +22,10 @@ public class SalaiDiApplication {
 
 		System.out.println(greeting + "\n");
 
+
+		System.out.println(" ######## Primary Bean ############");
+		System.out.println(myController.sayHello() + "\n");
+
 		/*
 		This part is injecting springFramework controller DI
 
@@ -29,9 +33,9 @@ public class SalaiDiApplication {
 
 		System.out.println(" ########## Property ##############" );
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean("propertyInjectedController");
-		System.out.println("-----1 interface with 1 implement-----");
+		System.out.println("------> 1 interface with 1 combine implement <-----");
 		System.out.println(propertyInjectedController.getGreetingFR() + "\n");
-		System.out.println("-----1 interface with individual/specific implement-----");
+		System.out.println("-----> 1 interface with individual/specific implement <-----");
 		System.out.println(propertyInjectedController.getGreetingPro() + "\n" +"\n");
 			/* This will get error coz spring does not know that the manage component.
 		Thus you need to assign the annotated "@Controller" at PropertyInjectedController Class.
@@ -40,16 +44,16 @@ public class SalaiDiApplication {
 
 		System.out.println(" ########## Setter ##############" );
 		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
-		System.out.println("-----1 interface with 1 implement-----");
+		System.out.println("-----> 1 interface with 1 combine implement <-----");
 		System.out.println(setterInjectedController.getGreetingENG()+ "\n");
-		System.out.println("-----1 interface with individual/specific implement-----");
+		System.out.println("-----> 1 interface with individual/specific implement <-----");
 		System.out.println(setterInjectedController.getGreetingSetter()+ "\n"+ "\n");
 
 		System.out.println(" ########## Constructor ##############" );
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
-		System.out.println("-----1 interface with 1 implement-----");
+		System.out.println("-----> 1 interface with 1 combine implement <-----");
 		System.out.println(constructorInjectedController.getGreetingNL()+ "\n");
-		System.out.println("-----1 interface with individual/specific implement-----");
+		System.out.println("-----> 1 interface with individual/specific implement <-----");
 		System.out.println(constructorInjectedController.getGreeting()+ "\n"+ "\n");
 	}
 
