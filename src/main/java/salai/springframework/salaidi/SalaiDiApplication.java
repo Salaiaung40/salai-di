@@ -23,9 +23,6 @@ public class SalaiDiApplication {
 		System.out.println(greeting + "\n");
 
 
-		System.out.println(" ######## Primary Bean ############");
-		System.out.println(myController.sayHello() + "\n");
-
 		/*
 		This part is injecting springFramework controller DI
 

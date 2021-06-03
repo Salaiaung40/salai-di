@@ -9,18 +9,14 @@ This is the very simple calling controller method
 @Controller
 public class MyController {
 
-    private final GreetingService greetingService;
 
-    public MyController(GreetingService greetingService) {
-        this.greetingService = greetingService;
-    }
 
     public String sayHello() {
 
-//        System.out.println("Hello World from Salai!!");
-//
-//        return "Hi Folks!! this is Salai";
+        System.out.println("Hello World from Salai!!");
 
-        return greetingService.sayGreetingENG();
+        return "Hi Folks!! this is Salai";
+
+
     }
 }
